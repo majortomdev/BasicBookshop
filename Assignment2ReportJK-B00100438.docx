@@ -1,0 +1,93 @@
+Joseph Kinahans(B00100438) Software2 assignment report.
+
+The Book class contains the variables to match each of the rows in the database. The class BookQueries contains a set of static final variables which are in place to enable each of the classes' four methods to connect to the database. These four methods are described below:
+1. selectAllFromDB – this method, as with all the methods, connects to the database; after which it uses a prepared statement to select all from the table and then chooses which columns to display to the JTextArea (the JTextArea is passed in as a parameter)
+2. updatePrice – this method takes in three arguments- the name and price of the book to be updated and the JTextArea to which the program outputs to to indicate successful update. It uses a prepared statement with the '?' placeholder to tailor it to the requirements of the arguments passed.
+3. insertNewBook- this method takes in four arguments, three of which are the details of the book which is to be added to the database, and the fourth argument is the JTextArea in which the program will indicate successful operation. It uses a prepared statement with the '?' placeholder to tailor it to the requirements of the arguments.
+4. deleteBook – this method uses a prepared statement with the '?' placeholder to delete rows from the database that correlate with the argument passed in. The argument is the name of the book, with the second argument being the JTextArea to display success.
+* the first tab, which displays the current contents of the database, is useful throughout the different functions of the program, it can at any time be returned to to check to see that the changes have been made to the database in real time.
+
+The BookShopApplication class is the class which contains all the components that make up the GUI. This class, by extending the JFrame class, is a JFrame itself. It contains a JTabbedPane which enables a tab for each database operation to be processed. It also includes all the actionListeners which are attached to each of the four buttons(one for each pane) and each one calling one of the four methods defined in the BookQueries class. Each of the methods' qualitative arguments are obtained by reading, upon the press of the button, the entries held in the textfields which are set up here. On each method that changes the database I have it set to reset each textfield after the button has been pressed, as the information in each textfiled has already been processed.  I believe it makes for tidier programming when this is in place.
+
+Below are screenshots of the program in use:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Display The Contents of the Database
+
+
+
+
+
+The top shot is the program before the first button is pressed, the second is after.
+
+The priceUpdate database function
+
+
+The second tab takes in the name and the new price, which the updatePrice method uses to update the database. Below is a shot of a reversion to the first tab, which shows the live database contents, with the button pressed again to reflect the update, which can be done also for the insertNewBook and deleteBook methods.
+
+Checking the database for live changes
+
+
+
+After performing the updatePrice method, I can jump back to the first tab and press the button on it to display the updated database.
+
+
+
+The InsertNewBook Database Function
+
+
+
+Once again, a quick return to tab one will ensure that the database has been updated as required.
+
+
+The deleteBook database function
+
+
+
+Upon pressing the button, as with the other methods, the argument (in this case the book name) is passed into the deleteBook method, through the contents which have been entered into the textfield, and the method is carried out, thus updating the database.
+
+
+Resources Used: / Bibliography
+
+Bates, Bert & Sierra, Kathy. 2005. Head First Java. 2nd Edition. O'Reilly: Sebastopol.
+
+McGrath, Mike. 2014. JAVA in easy steps. 5th Edition. In Easy Steps Limited: Warwickshire.
+
+https://docs.oracle.com/javase/7/docs/api/
+
+http://stackoverflow.com/documentation/java/topics
+
+https://www.tutorialspoint.com/java/
+
+Lecture notes from ITB.
+
+Self-study.
+
+Java Diploma: Fitzwilliam Institute Dublin. Awarded June 2016
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
